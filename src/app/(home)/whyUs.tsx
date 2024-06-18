@@ -42,8 +42,8 @@ export default function WhyUs() {
             </div>
             {/* <p className='text-center text-xl opacity-70'>Are you a passionate PUBG player looking to buy a high-level account or eager to sell your own? PUBG TradeHub is your one-stop destination for seamless transactions, secure trading, and an unmatched gaming community experience.</p> */}
             <div className=' grid grid-cols-2 gap-7 my-[1.5em]'>
-                {whyData.map((obj) => (
-                    <WhyComp icon={obj.icon} heading={obj.heading} content={obj.content} />
+                {whyData.map((obj, index) => (
+                    <WhyComp key={index} icon={obj.icon} heading={obj.heading} content={obj.content} />
                 ))}
             </div>
         </div>

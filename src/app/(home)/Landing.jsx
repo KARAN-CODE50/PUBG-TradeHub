@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './navbar'
-import Buy from '../(buy)/buy'
 import Image from 'next/image'
 import { CircleDollarSign, TrendingUp, TrendingDown } from 'lucide-react'
 
@@ -24,7 +23,7 @@ export default function Content() {
         <div className=' absolute right-32'>
           <CircleDollarSign size={100} strokeWidth={1.5} stroke='#34BE82' fill='#9CFF2E' className='absolute left-[50px] top-[150px] inline-block transform rotate-[-30deg]' />
           <CircleDollarSign size={100} strokeWidth={1.5} stroke='#3ABEF9' fill='#A7E6FF' className='absolute right-[50px] top-[150px] inline-block transform rotate-[30deg]' />
-          <img src="/manicon.svg" alt="" />
+          <Image src="/manicon.svg" alt="icon" />
         </div>
       </div>
     </div>

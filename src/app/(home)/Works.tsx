@@ -66,8 +66,8 @@ export default function Works() {
             </div>
 
             <div className='grid grid-cols-2 mx-[13%] gap-5'>
-                {howItWorksData.map((who) => (
-                    <WhoCard for={who.for} items={who.items} />
+                {howItWorksData.map((who, index) => (
+                    <WhoCard key={index} for={who.for} items={who.items} />
                 ))}
             </div>
         </div>
@@ -80,8 +80,8 @@ function WhoCard({ for: who, items }: WorkDataItem) {
             <div className='p-5 rounded-md w-full h-full bg-primary'>
                 <p className='text-3xl text-center text-transparent bg-clip-text bg-gradient-to-b from-green-500 to-emerald-300 font-bebas tracking-widest mb-3'>For {who}</p>
                 <div className='flex flex-col gap-5'>
-                    {items.map((list) => (
-                        <motion.div initial={{scale: 0}} animate={{scale: 1}} className='flex items-center gap-5'>
+                    {items.map((list, index) => (
+                        <motion.div initial={{scale: 0}} animate={{scale: 1}} key={index} className='flex items-center gap-5'>
                             <div className=' opacity-25'>
                                 <Sparkles size={40} />
                             </div>
