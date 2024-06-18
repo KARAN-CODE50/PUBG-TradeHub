@@ -17,8 +17,9 @@ export default function Content() {
         <div className='z-10  ml-[13%] mr-[45%] font-manrope flex flex-col'>
           <p className=' text-3xl pb-1 text-[#FCDC94]'>Welcome to <b>PUBG TradeHub:</b></p>
           <p className=' text-7xl pb-5 relative'> 
-            <span className='font-bold text-primary-green '>Buy</span> and <span className='font-bold text-primary-blue'>Sell</span> PUBG Accounts Easily and Securely</p>
-          <p className=' text-3xl font-thin'>Discover Your Next PUBG Adventure or Find the Perfect Buyer for Your Account</p>
+            <span className='font-bold text-transparent bg-clip-text bg-gradient-to-b from-lime-300 to-green-300 '>Buy</span> and 
+            <span className='font-bold text-transparent bg-clip-text bg-gradient-to-b from-cyan-100 to-sky-400'> Sell</span> PUBG Accounts Easily and Securely</p>
+          <p className=' opacity-60 text-2xl font-thin'>Discover Your Next PUBG Adventure or Find the Perfect Buyer for Your Account</p>
         </div>
         <div className=' absolute right-32'>
           <CircleDollarSign size={100} strokeWidth={1.5} stroke='#34BE82' fill='#9CFF2E' className='absolute left-[50px] top-[150px] inline-block transform rotate-[-30deg]' />

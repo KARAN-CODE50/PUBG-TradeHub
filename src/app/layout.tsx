@@ -15,7 +15,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "PubgBuySell",
+  title: "PUBG TradeHub",
   description: "Sell or Buy PUBG Mobile Accounts",
 };
 
