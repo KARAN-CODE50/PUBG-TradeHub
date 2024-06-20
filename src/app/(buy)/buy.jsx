@@ -161,7 +161,7 @@ const BuyData = [
 
 function Buy() {
     return (
-        <div className='mx-[9%] py-32'>
+        <div className='mx-[9%] mt-32 mb-[5%]'>
             <div className='flex gap-3 items-center mb-3'>
                 <ShoppingCart strokeWidth={3} size={28} />
                 <p className='text-3xl font-bold font-manrope'>BUY ACCOUNTS</p>

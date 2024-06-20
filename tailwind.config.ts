@@ -22,6 +22,7 @@ module.exports = {
         'primary-green' : '#9CFF2E',
         'primary-two' : '#213744',
         'secondary' : '#0f212e',
+        'secondary-two' : '#2f4553',
       }
     },
   },

@@ -32,7 +32,7 @@ export default function BuyCard({name, level, desc, price, photoId} : buydata) {
                     </div>
                 </div>
                 <div className='flex justify-between items-end py-1 text-[1.2em]'>
-                    <p className='font-[800] font-manrope bg-gradient-to-b from-purple-400 to-green-400 text-transparent bg-clip-text'>$ {price}</p>
+                    <p className='font-[800] font-manrope text-transparent bg-clip-text'>$ {price}</p>
                     <p className='text-[0.8em] opacity-40'>@believe4u</p>
                 </div>
             </div>

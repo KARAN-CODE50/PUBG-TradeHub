@@ -6,7 +6,7 @@ function Navbar() {
         <div className='flex justify-center'>
             <div className='flex w-[80%] my-8 justify-between bg-secondary items-center rounded-full px-10 py-2'>
                 <div className='flex items-center gap-3'>
-                    <Image src="/mainlogo.png" alt="mainlogo" className='h-8' />
+                    <img src="/mainlogo.png" alt="mainlogo" className='h-8' />
                     <p className='text-[2.2em] font-bebas tracking-wide'>PUBG TradeHub</p>
                 </div>
                 <div className='flex items-center gap-5 font-manrope tracking-wide'>
