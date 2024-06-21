@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
+import { SignedOut } from '@clerk/nextjs'
+import { SignedIn, UserButton } from '@clerk/clerk-react'
 
 function Navbar() {
     return (
@@ -12,7 +15,16 @@ function Navbar() {
                 <div className='flex items-center gap-5 font-manrope tracking-wide'>
                     <p className=' cursor-pointer'>BUY</p>
                     <p className=' cursor-pointer'>SELL</p>
-                    <p className=' cursor-pointer text-black bg-primary-blue p-2 rounded-xl hover:bg-primary-two hover:text-white font-bold'>LOGIN</p>
+                    <SignedOut>
+                        <Link href="/sign-up">
+                            <p className=' cursor-pointer text-black bg-primary-blue p-2 rounded-xl hover:bg-primary-two hover:text-white font-bold'>LOGIN</p>
+                        </Link>
+                    </SignedOut>
+                    <SignedIn>
+                        <div>
+                            <UserButton afterSignOutUrl='/' />
+                        </div>
+                    </SignedIn>
                 </div>
             </div>
         </div>
