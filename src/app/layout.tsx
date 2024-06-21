@@ -26,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className} ${bebas_neue.variable} ${manrope.variable}`}>{children}</body>
       </html>
-    </ClerkProvider>
   );
 }
