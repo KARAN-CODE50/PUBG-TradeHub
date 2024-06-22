@@ -1,8 +1,11 @@
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import { AnimatePresence, motion } from "framer-motion"
+import { useRouter } from 'next/navigation'
 
 interface buydata {
+    id: string,
     name: string,
     level: number,
     desc: string,
@@ -10,13 +13,19 @@ interface buydata {
     photoId: number
 }
 
-export default function BuyCard({name, level, desc, price, photoId} : buydata) {
+export default function BuyCard({ id, name, level, desc, price, photoId }: buydata) {
+    const router = useRouter();
+
+    function goToAcc(id : string) {
+        router.push(`/buy/${id}`)
+    }
+    
     return (
-        <div className=' bg-primary-two px-6 py-4 rounded-lg w-[25em]'>
+        <motion.div onClick={() => goToAcc(id)} layoutId={id} whileHover="hovered" variants={{ hovered: { scale: 1.04 } }} className='border-2 border-primary-two hover:border-2 hover:border-secondary-two cursor-pointer bg-primary-two px-6 py-4 rounded-lg w-full lg:w-[25em]'>
             <div className='rounded-md flex flex-col gap-2'>
                 <div className='flex items-center justify-between mb-2'>
                     <div className='flex gap-3 text-md'>
-                        <p className='font-semibold'>{name}</p>
+                        <motion.p variants={{}} className='font-semibold'>{name}</motion.p>
                         <p>•</p>
                         <p className=' text-white opacity-50 font-[400]'>Level {level}</p>
                     </div>
@@ -32,10 +41,12 @@ export default function BuyCard({name, level, desc, price, photoId} : buydata) {
                     </div>
                 </div>
                 <div className='flex justify-between items-end py-1 text-[1.2em]'>
-                    <p className='font-[800] font-manrope text-transparent bg-clip-text'>$ {price}</p>
+                    <div className=' bg-secondary px-2 py-1 rounded-lg'>
+                        <p className='font-[800] opacity-70 font-manrope bg-white text-transparent bg-clip-text'>$ {price}</p>
+                    </div>
                     <p className='text-[0.8em] opacity-40'>@believe4u</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

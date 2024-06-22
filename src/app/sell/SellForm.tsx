@@ -45,7 +45,7 @@ function SellForm() {
             <input value={formData.accName} name='accName' onChange={handleChange} placeholder='Account Name' className=' p-2 row-start-2 col-span-2 rounded-[5px] bg-secondary border-2 border-secondary-two' type="text" />
             <input value={formData.level} name='level' onChange={handleChange} placeholder='Account Level' className=' p-2 row-start-2 rounded-[5px] bg-secondary border-2 border-secondary-two' type="number" />
             <input value={formData.price} name='price' onChange={handleChange} placeholder=' ₹ Set Price' className=' p-2 row-start-2 rounded-[5px] bg-secondary border-2 border-secondary-two' type="number" />
-            <textarea value={formData.desc} name='desc' onChange={handleChange} placeholder='Account Description' className='p-2 row-start-3 row-span-3 col-span-4 rounded-md bg-secondary border-2 border-secondary-two'></textarea>
+            <textarea value={formData.desc} name='desc' onChange={handleChange} placeholder='Account Description' className='p-2 min-h-full max-h-[40px] row-start-3 row-span-3 col-span-4 rounded-md bg-secondary border-2 border-secondary-two'></textarea>
             <div className=' row-span-5 border-secondary-two text-[#5a849f] border-[3px] bg-secondary border-dashed cursor-pointer flex flex-col items-center justify-center rounded-lg'>
                 <Upload size={58}/>
                 <p className='font-semibold pb-2'>Add Images</p>

@@ -58,7 +58,7 @@ const howItWorksData: WorkDataItem[] = [
 
 export default function Works() {
     return (
-        <div>
+        <div className='mb-[8%] mt-[10%]'>
             <div className='flex justify-center mb-8 items-center gap-5'>
                 <div className=' opacity-50 w-[20em] bg-gradient-to-l from-white to-primary h-[0.2em] rounded-full bg-white' />
                 <p className='text-3xl text-center font-semibold'>How it Works ?</p>

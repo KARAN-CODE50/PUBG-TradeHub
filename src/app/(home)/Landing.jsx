@@ -4,6 +4,7 @@ import Navbar from './navbar'
 import { motion } from "framer-motion"
 import Image from 'next/image'
 import { CircleDollarSign, ArrowUpRight, TrendingUp, TrendingDown } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Content() {
   return (
@@ -22,49 +23,53 @@ export default function Content() {
             <span className='font-bold text-transparent bg-clip-text bg-gradient-to-b from-cyan-100 to-sky-400'> Sell</span> PUBG Accounts Easily and Securely</p>
           <p className=' opacity-60 text-2xl font-thin'>Discover Your Next PUBG Adventure or Find the Perfect Buyer for Your Account</p>
           <div className='flex gap-3 mt-5 text-2xl text-secondary font-bold'>
-            <motion.div initial="initial" whileHover="hovered" className=' flex overflow-hidden items-center justify-center cursor-pointer bg-gradient-to-b from-lime-300 to-green-300 rounded-md py-1 px-4'>
-              BUY
-              <div className=' relative'>
-                <motion.div variants={{
-                  initial: { y: 100 },
-                  hovered: { y: 0 }
-                }}
-                >
-                  <ArrowUpRight size={30} />
-                </motion.div>
-                <motion.div
-                  className='absolute inset-0'
-                  variants={{
-                    initial: { y: 0 },
-                    hovered: { y: "-50px" }
+            <Link href='/buy'>
+              <motion.div initial="initial" whileHover="hovered" className=' flex overflow-hidden items-center justify-center cursor-pointer bg-primary-green rounded-md py-1 px-4'>
+                BUY
+                <div className=' relative'>
+                  <motion.div variants={{
+                    initial: { y: 100 },
+                    hovered: { y: 0 }
                   }}
-                >
-                  <ArrowUpRight size={30} />
-                </motion.div>
-              </div>
-            </motion.div>
+                  >
+                    <ArrowUpRight size={30} />
+                  </motion.div>
+                  <motion.div
+                    className='absolute inset-0'
+                    variants={{
+                      initial: { y: 0 },
+                      hovered: { y: "-50px" }
+                    }}
+                  >
+                    <ArrowUpRight size={30} />
+                  </motion.div>
+                </div>
+              </motion.div>
+            </Link>
 
-            <motion.div initial="initial" whileHover="hovered" className=' flex overflow-hidden items-center justify-center cursor-pointer bg-gradient-to-b from-cyan-100 to-sky-400 rounded-md py-1 px-4'>
-              SELL
-              <div className=' relative'>
-                <motion.div variants={{
-                  initial: { y: 100 },
-                  hovered: { y: 0 }
-                }}
-                >
-                  <ArrowUpRight size={30} />
-                </motion.div>
-                <motion.div
-                  className='absolute inset-0'
-                  variants={{
-                    initial: { y: 0 },
-                    hovered: { y: "-50px" }
+            <Link href='/sell'>
+              <motion.div initial="initial" whileHover="hovered" className=' flex overflow-hidden items-center justify-center cursor-pointer bg-primary-blue rounded-md py-1 px-4'>
+                SELL
+                <div className=' relative'>
+                  <motion.div variants={{
+                    initial: { y: 100 },
+                    hovered: { y: 0 }
                   }}
-                >
-                  <ArrowUpRight size={30} />
-                </motion.div>
-              </div>
-            </motion.div>
+                  >
+                    <ArrowUpRight size={30} />
+                  </motion.div>
+                  <motion.div
+                    className='absolute inset-0'
+                    variants={{
+                      initial: { y: 0 },
+                      hovered: { y: "-50px" }
+                    }}
+                  >
+                    <ArrowUpRight size={30} />
+                  </motion.div>
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
         <div className=' absolute right-32'>

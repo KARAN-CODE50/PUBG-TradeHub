@@ -34,7 +34,7 @@ const whyData: WhyDataItem[] = [
 
 export default function WhyUs() {
     return (
-        <div className='mx-[13%] mt-[5%] mb-[10%] font-manrope'>
+        <div className='mx-[13%] my-[8%] font-manrope'>
             <div className='flex justify-center mb-8 items-center gap-5'>
                 <div className=' opacity-50 w-[20em] bg-gradient-to-l from-white to-primary h-[0.2em] rounded-full bg-white' />
                 <p className='text-3xl text-center font-semibold'>Why Choose Us ?</p>
