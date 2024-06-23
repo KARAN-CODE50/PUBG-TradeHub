@@ -11,19 +11,23 @@ interface FormData {
     desc: string
 }
 
-function SellForm() {
-   const [formData, setFormData] = useState<FormData>({
-    email: "",
-    phoneNo: "",
-    accName: "",
-    level: "",
-    price: "",
-    desc: ""
-   })
+interface SellFormProps {
+    setSent: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-    const handleChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement >) => {
-        const {name, value} = e.target;
-        setFormData((prevData) => ({...prevData, [name]: value}))
+function SellForm({ setSent }: SellFormProps) {
+    const [formData, setFormData] = useState<FormData>({
+        email: "",
+        phoneNo: "",
+        accName: "",
+        level: "",
+        price: "",
+        desc: ""
+    })
+
+    const handleChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }))
     }, [])
 
     const submitData = useCallback((e: FormEvent<HTMLFormElement>) => {
@@ -34,7 +38,8 @@ function SellForm() {
             accName: "",
             level: "",
             price: "",
-            desc: ""})
+            desc: ""
+        })
         console.log(formData);
     }, [formData])
 
@@ -47,11 +52,11 @@ function SellForm() {
             <input value={formData.price} name='price' onChange={handleChange} placeholder=' ₹ Set Price' className=' p-2 row-start-2 rounded-[5px] bg-secondary border-2 border-secondary-two' type="number" />
             <textarea value={formData.desc} name='desc' onChange={handleChange} placeholder='Account Description' className='p-2 min-h-full max-h-[40px] row-start-3 row-span-3 col-span-4 rounded-md bg-secondary border-2 border-secondary-two'></textarea>
             <div className=' row-span-5 border-secondary-two text-[#5a849f] border-[3px] bg-secondary border-dashed cursor-pointer flex flex-col items-center justify-center rounded-lg'>
-                <Upload size={58}/>
+                <Upload size={58} />
                 <p className='font-semibold pb-2'>Add Images</p>
                 <p className=''>Drag & Drop files here</p>
             </div>
-            <button type='submit' className=' font-semibold text-xl tracking-widest row-start-6 col-span-5 rounded-md bg-primary-two'>SUBMIT</button>
+            <button onClick={() => setSent(prevState => !prevState)} type='submit' className=' font-semibold text-xl tracking-widest row-start-6 col-span-5 rounded-md bg-primary-two'>SUBMIT</button>
         </form>
     )
 }
