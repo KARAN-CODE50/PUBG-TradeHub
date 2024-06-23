@@ -19,13 +19,12 @@ interface buydata {
 
 function Account({ params }: { params: { id: string } }) {
     const [accountData, setAccountData] = useState<buydata | null>(null);
-    const checkID = decodeURIComponent(params.id)
-    const router = useRouter();
-
+    
     const { isAuthenticated } = useKindeBrowserClient();
     console.log(isAuthenticated);
-
+    
     useEffect(() => {
+        const checkID = decodeURIComponent(params.id)
         const data = BuyData.find((item) => item.id === checkID);
         if (data) {
             setAccountData({
