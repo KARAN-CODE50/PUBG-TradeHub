@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
-import { CircleX, Menu, User } from 'lucide-react';
+import { CircleDollarSign, CircleX, DollarSign, Menu, ShoppingCart, User } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,12 +23,12 @@ function Navbar() {
                         <p className='text-[1.6em] sm:text-[2.2em] font-bebas tracking-wide'>PUBG TradeHub</p>
                     </div>
                 </Link>
-                <div className='flex items-center gap-5 font-manrope tracking-wide'>
+                <div className='flex items-center gap-2 font-manrope tracking-wide'>
                     <Link href='/buy'>
-                        <p className='hidden md:block cursor-pointer'>BUY</p>
+                        <motion.p className='hidden hover:bg-primary-two rounded-full py-1 px-3 cursor-pointer md:flex justify-center items-center gap-2'> <ShoppingCart size={20} className=' opacity-50'/> BUY</motion.p>
                     </Link>
                     <Link href='/sell'>
-                        <p className='hidden md:block cursor-pointer'>SELL</p>
+                        <motion.p className='hidden hover:bg-primary-two rounded-full py-1 px-3 cursor-pointer md:flex justify-center items-center gap-2'><CircleDollarSign size={22} className=' opacity-50'/>SELL</motion.p>
                     </Link>
                     {!user ? (
                         <LoginLink className='rounded-full px-3 py-2 bg-secondary-two md:px-3 font-bold hover:bg-primary-two'>Log in</LoginLink>
