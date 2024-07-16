@@ -34,14 +34,13 @@ const whyData: WhyDataItem[] = [
 
 export default function WhyUs() {
     return (
-        <div className='mx-[13%] my-[8%] font-manrope'>
-            <div className='flex justify-center mb-8 items-center gap-5'>
-                <div className=' opacity-50 w-[20em] bg-gradient-to-l from-white to-primary h-[0.2em] rounded-full bg-white' />
-                <p className='text-3xl text-center font-semibold'>Why Choose Us ?</p>
-                <div className=' opacity-50 w-[20em] bg-gradient-to-r from-white to-primary h-[0.2em] rounded-full bg-white' />
+        <div className='font-manrope md:my-[5%] mb-[8%] mt-[10%]'>
+            <div className='flex justify-center mb-8 items-center md:gap-5 gap-2'>
+                <div className='opacity-50 w-[20em] bg-gradient-to-l from-white to-primary h-[0.2em] rounded-full bg-white' />
+                <p className='md:text-3xl text-2xl text-nowrap text-center md:font-semibold'>Why Choose Us ?</p>
+                <div className='opacity-50 w-[20em] bg-gradient-to-r from-white to-primary h-[0.2em] rounded-full bg-white' />
             </div>
-            {/* <p className='text-center text-xl opacity-70'>Are you a passionate PUBG player looking to buy a high-level account or eager to sell your own? PUBG TradeHub is your one-stop destination for seamless transactions, secure trading, and an unmatched gaming community experience.</p> */}
-            <div className=' grid grid-cols-2 gap-7 my-[1.5em]'>
+            <div className='md:mx-[13%] mx-[8%] grid md:grid-cols-2 gap-7 my-[1.5em]'>
                 {whyData.map((obj, index) => (
                     <WhyComp key={index} icon={obj.icon} heading={obj.heading} content={obj.content} />
                 ))}
@@ -57,8 +56,8 @@ function WhyComp({icon: Icon, heading, content} : WhyDataItem) {
                 <Icon size={50} color='#5AB2FF ' />
             </div>
             <div>
-                <p className=' bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text text-2xl font-bebas tracking-wide'>{heading}</p>
-                <p className=' text-justify'>{content}</p>
+                <p className=' bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text md:text-2xl text-xl font-bebas tracking-wide'>{heading}</p>
+                <p className=' text-[0.8em] md:text-[1em] md:opacity-70 font-light opacity-50 text-left md:text-justify'>{content}</p>
             </div>
         </motion.div>
     )

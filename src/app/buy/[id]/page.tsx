@@ -52,21 +52,21 @@ function Account({ params }: { params: { id: string } }) {
         <div className=' bg-primary min-h-screen pb-16 text-white'>
             <Navbar />
             {accountData ? (
-                <div className='flex mx-[12%] mt-5 gap-5' >
+                <div className='flex md:flex-row flex-col mx-[12%] mt-5 gap-5' >
                     <motion.div className='border-2 border-primary-two hover:border-2 hover:border-secondary-two bg-primary-two p-6 rounded-lg w-full lg:w-[55%]'>
                         <div className='rounded-md flex flex-col gap-2'>
-                            <div className='bg-secondary relative h-[235px] rounded-lg overflow-hidden'>
+                            <div className='bg-secondary relative md:h-[235px] h-[150px] rounded-lg overflow-hidden'>
                                 <Image alt='logo' fill objectFit='contain' src={`/accPhotos/image-photo-${accountData.photoId}.jpg`}></Image>
                             </div>
                             <div className='flex items-center justify-between mt-2'>
-                                <div className='flex gap-3 text-lg'>
-                                    <motion.p className='font-semibold'>{accountData.name}</motion.p>
+                                <div className='flex gap-3 md:text-lg text-[0.7em]'>
+                                    <motion.p className='font-semibold '>{accountData.name}</motion.p>
                                     <p>•</p>
                                     <p className=' text-white opacity-50 font-[400]'>Level {accountData.level}</p>
                                 </div>
                             </div>
                             <hr className=' opacity-20' />
-                            <div className='text-[1.05em] flex pb-2 gap-2 justify-between'>
+                            <div className='md:text-[1.05em] text-[0.8em] flex pb-2 gap-2 justify-between'>
                                 <div className='flex flex-col font-[300]'>
                                     {/* <p className='text-[1em] opacity-90 font-[200]'>{accountData.desc}</p> */}
                                     <p>{accountData.desc.split('\n').map((line, index) => (
@@ -80,7 +80,7 @@ function Account({ params }: { params: { id: string } }) {
                         </div>
                     </motion.div>
                     <div className=' bg-primary-two font-manrope flex flex-col gap-3 px-5 py-6 h-[300px] flex-1 rounded-lg'>
-                        <div className='flex text-lg justify-between'>
+                        <div className='flex md:text-lg text-sm justify-between'>
                             <p className=''>Delivery Time</p>
                             <div className='flex items-center gap-2'>
                                 <Zap color='#08dac4' />
@@ -88,7 +88,7 @@ function Account({ params }: { params: { id: string } }) {
                             </div>
                         </div>
                         <hr className='border border-secondary-two' />
-                        <div className='flex text-lg justify-between'>
+                        <div className='flex md:text-lg text-sm justify-between'>
                             <p className=''>Warranty</p>
                             <div className='flex items-center gap-2'>
                                 <Timer color='#fbd684' />
@@ -96,16 +96,16 @@ function Account({ params }: { params: { id: string } }) {
                             </div>
                         </div>
                         <hr className='border border-secondary-two' />
-                        <div className=' flex flex-col gap-1 pb-2'>
-                            <div className='flex justify-between px-2 opacity-70'>
+                        <div className=' text-sm flex flex-col gap-1 pb-2'>
+                            <div className='flex justify-between md:px-2 opacity-70'>
                                 <p>Base Price</p>
                                 <p>$ {accountData.price}</p>
                             </div>
-                            <div className='flex justify-between px-2 opacity-70'>
+                            <div className='flex justify-between md:px-2 opacity-70'>
                                 <p>Discount (10%)</p>
                                 <p>- $ {discount(accountData.price)}</p>
                             </div>
-                            <div className='flex justify-between text-lg px-2'>
+                            <div className='flex justify-between text-lg md:px-2'>
                                 <p>Final Price</p>
                                 <p>$ {finalPrice(accountData.price)}</p>
                             </div>

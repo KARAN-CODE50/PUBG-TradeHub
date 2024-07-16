@@ -78,7 +78,7 @@ function SellForm({ setSent }: SellFormProps) {
     }, [validate, formData, setSent])
 
     return (
-        <form onSubmit={submitData} className='grid grid-cols-5 grid-rows-6 gap-3 my-5'>
+        <form onSubmit={submitData} className='md:grid flex flex-col gap-3 md:grid-cols-5 md:grid-rows-6 md:gap-3 my-5'>
             <input value={formData.email} name='email' onChange={handleChange} placeholder='Email Address' className={`p-2 col-span-2 rounded-[5px] bg-secondary border-2 ${errors.email ? 'border-red-400' : 'border-secondary-two'}`} type="email" />
             {/* {errors.email && <span className="text-red-500 col-span-2">{errors.email}</span>} */}
             <input value={formData.phoneNo} name='phoneNo' onChange={handleChange} placeholder='Phone Number' className={`p-2 col-span-2 rounded-[5px] bg-secondary border-2 ${errors.phoneNo ? 'border-red-400' : 'border-secondary-two'}`} type="text" />
@@ -89,12 +89,12 @@ function SellForm({ setSent }: SellFormProps) {
             {/* {errors.level && <span className="text-red-500">{errors.level}</span>} */}
             <input value={formData.price} name='price' onChange={handleChange} placeholder='₹ Set Price' className={`p-2 row-start-2 rounded-[5px] bg-secondary border-2 ${errors.price ? 'border-red-400' : 'border-secondary-two'}`} type="number" />
             {/* {errors.price && <span className="text-red-500">{errors.price}</span>} */}
-            <textarea value={formData.desc} name='desc' onChange={handleChange} placeholder='Account Description' className={`p-2 min-h-full max-h-[40px] row-start-3 row-span-3 col-span-4 rounded-md bg-secondary border-2 ${errors.desc ? 'border-red-400' : 'border-secondary-two'}`}></textarea>
+            <textarea value={formData.desc} name='desc' onChange={handleChange} placeholder='Account Description' className={`p-2 md:min-h-full md:max-h-[40px] min-h-[170px] max-h-[170px] row-start-3 row-span-3 col-span-4 rounded-md bg-secondary border-2 ${errors.desc ? 'border-red-400' : 'border-secondary-two'}`}></textarea>
             {/* {errors.desc && <span className="text-red-500 col-span-4">{errors.desc}</span>} */}
             <div className='row-span-5'>
                 <DragDrop />
             </div>
-            <button type='submit' className='font-semibold text-xl tracking-widest row-start-6 col-span-5 rounded-md bg-primary-two'>SUBMIT</button>
+            <button type='submit' className='font-semibold text-xl py-2 md:py-0 tracking-widest row-start-6 col-span-5 rounded-md bg-primary-two'>SUBMIT</button>
         </form>
     )
 }

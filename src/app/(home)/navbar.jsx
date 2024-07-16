@@ -16,7 +16,7 @@ function Navbar() {
 
     return (
         <div className='flex justify-center relative'>
-            <div className='flex w-full mx-7 md:w-[85%] my-8 justify-between bg-secondary items-center rounded-full px-4 md:pl-10 md:pr-5 py-2'>
+            <div className='flex w-full mx-6 md:w-[85%] my-8 justify-between bg-secondary items-center rounded-full px-4 md:pl-10 md:pr-5 py-2'>
                 <Link href='/'>
                     <div className='flex items-center gap-3'>
                         <Image width={30} height={20} src="/mainlogo.png" alt="mainlogo" />
@@ -39,16 +39,20 @@ function Navbar() {
                             </div>
                             {openMenu &&
                                 <div className=' min-h-screen p-5 overflow-y-auto bg-secondary absolute top-0 right-0 w-[60%] z-40'>
-                                    <div className='flex justify-between items-start'>
+                                    <div className='flex justify-between items-center'>
                                         <div className='flex flex-col gap-3 font-semibold'>
                                             <div className={`flex z-20 items-center gap-2 bg-primary-two py-2 px-3 rounded-full`}>
                                                 {user.picture ? <Image width={35} height={8} className='rounded-full' src={user.picture} alt="pic" /> : <User fill='white' size={20} />}
                                                 <p className='font-semibold'>{user.given_name}</p>
                                             </div>
-                                            <p className='pl-3'>BUY</p>
-                                            <p className='pl-3'>SELL</p>
                                         </div>
-                                        <CircleX size={30} />
+                                        <div onClick={toggleMenu}>
+                                            <CircleX size={30} />
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col my-5 gap-5'>
+                                        <a href='/buy' className='pl-3 text-black font-bold p-2 rounded-full text-center bg-primary-green'>BUY</a>
+                                        <a href='/sell' className='pl-3 text-black font-bold p-2 rounded-full text-center bg-primary-blue'>SELL</a>
                                     </div>
                                 </div>
                             }

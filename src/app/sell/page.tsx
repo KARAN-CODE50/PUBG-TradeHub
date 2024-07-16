@@ -8,7 +8,7 @@ function Sell() {
   const [sent, setSent] = useState(false);
 
   return (
-    <div className={`bg-primary h-screen text-white`}>
+    <div className={`bg-primary md:h-screen text-white`}>
       <div className={`${sent ? 'blur-lg' : 'none'}`}>
         <Navbar />
         <div className='px-[9%] py-[5%]'>
@@ -21,7 +21,7 @@ function Sell() {
       </div>
 
       {sent && (
-        <div className='border-2 border-secondary-two bg-secondary rounded-lg absolute p-4 m-auto inset-0 h-[24em] w-[25em]'>
+        <div className='border-2 border-secondary-two bg-secondary rounded-lg absolute p-4 m-auto inset-0 md:h-[24em] md:w-[25em] h-[27em] mx-6 md:mx-0'>
           <div className='flex font-manrope justify-between'>
             <p className=' opacity-80'>Account Sent Successfully</p>
             <div role='button' onClick={() => setSent(!sent)} className=' opacity-50'>

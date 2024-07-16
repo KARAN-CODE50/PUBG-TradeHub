@@ -4,15 +4,16 @@ import { ChevronRight, ShoppingCart } from 'lucide-react'
 import BuyCard from './BuyCard'
 import Navbar from '../(home)/navbar'
 import BuyData from "../data/accounts"
+import Footer from '../(home)/Footer'
 
 function Buy() {
     return (
         <div className='bg-primary text-white'>
             <Navbar/>
-            <div className='mx-[9%] py-[3%]'>
+            <div className='mx-[9%] mb-6 py-[3%]'>
                 <div className='flex gap-3 items-center mb-5'>
                     <ShoppingCart strokeWidth={3} size={28} />
-                    <p className='text-3xl font-bold font-manrope'>BUY ACCOUNTS</p>
+                    <p className='md:text-3xl font-bold font-manrope'>BUY ACCOUNTS</p>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
                     {BuyData.map((data, index) => (
@@ -20,6 +21,7 @@ function Buy() {
                     ))}
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

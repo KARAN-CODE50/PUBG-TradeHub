@@ -46,7 +46,7 @@ export default function ContactUs() {
     }, [openModal]);
 
     return (
-        <div className='mx-[13%] my-[8%] font-manrope relative'>
+        <div className='md:my-[8%] mb-[8%] mt-[15%] font-manrope relative'>
             <AnimatePresence>
                 {openModal && response &&
                     <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} className='border-2 text-green-400 absolute top-0 left-0 right-0 w-[20em] gap-5 h-[15em] bg-secondary-two z-50 rounded-lg p-5 flex flex-col justify-center items-center text-center mx-auto'>
@@ -56,10 +56,12 @@ export default function ContactUs() {
             </AnimatePresence>
             <div className='flex justify-center mb-8 items-center gap-5'>
                 <div className=' opacity-50 w-[20em] bg-gradient-to-l from-white to-primary h-[0.2em] rounded-full bg-white' />
-                <p className='text-3xl text-center font-semibold'>Contact Us</p>
+                <p className='md:text-3xl text-2xl text-nowrap text-center md:font-semibold'>Contact Us</p>
                 <div className=' opacity-50 w-[20em] bg-gradient-to-r from-white to-primary h-[0.2em] rounded-full bg-white' />
             </div>
-            <ContactForm formData={formData} setFormData={setFormData} errors={errors} setErrors={setErrors} setOpenModal={setOpenModal} setResponse={setResponse} />
+            <div className='md:mx-[13%] mx-[8%]'>
+                <ContactForm formData={formData} setFormData={setFormData} errors={errors} setErrors={setErrors} setOpenModal={setOpenModal} setResponse={setResponse} />
+            </div>
         </div>
     )
 }
@@ -112,7 +114,7 @@ function ContactForm({ formData, setFormData, errors, setErrors, setOpenModal, s
 
     return (
         <form onSubmit={submitData} className=' space-y-5'>
-            <div className='flex space-x-5'>
+            <div className='flex md:flex-row flex-col md:space-x-5 gap-4'>
                 <div
                     className={`flex-1 bg-secondary flex pl-3 py-1 gap-2 items-center border-2 border-white border-opacity-25 rounded-md ${errors.name ? 'border-red-500 border-opacity-70' : 'none'}`}>
                     <User size={22} />
